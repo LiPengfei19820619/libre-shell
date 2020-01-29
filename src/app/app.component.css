@@ -1,0 +1,44 @@
+.app-frame {
+    height: 100%;
+}
+
+.app-toolbar {
+    height: 40px;
+    background-color: rgb(224, 221, 221);
+}
+
+.app-workbench {
+    height: 100%;
+}
+
+.app-activitybar {
+    width: 30px;
+    height: 100%;
+    background-color: black;
+}
+
+.app-split-container {
+    background-color: white;
+}
+
+.app-cmd-container {
+    height: 100%;
+}
+
+.app-cmd-bar {
+    height: 32px;
+    background-color: rgb(158, 160, 160);
+}
+
+.app-cmd-input {
+    height: 100%;
+    width: 100%;
+}
+
+.app-statusbar {
+    background-color: rgb(0, 122, 204);
+    height: 22px;
+    margin: 0;
+    padding: 0px;
+    text-align: right;
+}

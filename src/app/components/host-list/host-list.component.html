@@ -1,0 +1,38 @@
+<div fxLayout="row" fxLayoutAlign="space-between center" class="app-host-list-head">
+	<div>
+		<span class="app-host-list-title" (click)="onToggleExpanded()">
+			<i *ngIf="expanded" nz-icon [nzType]="'down'"></i>
+			<i *ngIf="!expanded" nz-icon [nzType]="'right'"></i>
+			<span>主机列表</span>
+		</span>
+	</div>
+	<div *ngIf="!loading" class="app-host-list-operation">
+		<button mat-icon-button (click)="this.refresh.emit()">
+			<mat-icon>refresh</mat-icon>
+		</button>
+		<button mat-icon-button (click)="this.add.emit()">
+			<mat-icon>add</mat-icon>
+		</button>
+	</div>
+</div>
+
+<div *ngIf="expanded" class="app-host-list-content">
+	<div *ngIf="loading">
+		<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+	</div>
+	<div *ngIf="!loading">
+	
+		<div *ngIf="hosts">
+			<!-- <app-joke-card-item *ngFor="let joke of jokes" [joke]="joke"></app-joke-card-item> -->
+			<ul>
+				<li *ngFor="let host of hosts">{{host.id}}-{{host.ipaddr}}:{{host.port}}</li>
+			</ul>
+		</div>
+	
+		<div *ngIf="!hosts">无保存的主机信息</div>
+	</div>
+	
+	<div *ngIf="error">
+		An error occurred: {{error.message}}
+	</div>
+</div>

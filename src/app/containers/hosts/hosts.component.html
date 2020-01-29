@@ -1,0 +1,3 @@
+<app-host-list [hosts]="hosts$ | async" [loading]="isLoading$ | async" [error]="(error$ | async)"
+    (refresh)="onRefresh()" (add)="onAdd()">
+</app-host-list>
